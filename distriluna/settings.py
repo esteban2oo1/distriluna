@@ -78,17 +78,29 @@ WSGI_APPLICATION = 'distriluna.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
-
 DATABASES = {
     'default': {
-#        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'frwahxxknm9kwy6c.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        'PORT': 3306,
         'NAME': 'h5m5ycugiyaph9bd',
-        'USER':'ru0c3z658bcktsma',
-        'PASSWORD':'c6is44jr43lsrz65',
-        'HOST':'frwahxxknm9kwy6c.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-        'PORT':'3306'
+        'USER': 'ru0c3z658bcktsma',
+        'PASSWORD': 'c6is44jr43lsrz65',
+        'OPTIONS': {
+            'ssl_mode': 'REQUIRED',
+        },
     }
 }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'ferreteria_josa',
+#        'USER':'root',
+#        'PASSWORD':'admin',
+#        'HOST':'localhost',
+#        'PORT':'3306'
+#    }
+#}
 
 
 # Password validation
@@ -126,8 +138,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATICFILES_DIRS = ['C:/Users/USER/Desktop/distriluna/ferreteria/templates']
-
+#STATICFILES_DIRS = ['C:/Users/USER/Desktop/distriluna/ferreteria/templates']
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 #STATIC_URL = 'static/'
 LOGIN_URL = '/welcome'
 # Default primary key field type
