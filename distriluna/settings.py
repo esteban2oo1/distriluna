@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -77,16 +77,20 @@ WSGI_APPLICATION = 'distriluna.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ferreteria_josa',
-        'USER':'root',
-        'PASSWORD':'admin',
-        'HOST':'localhost',
-        'PORT':'3306'
-    }
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'ferreteria_josa',
+#        'USER':'root',
+#        'PASSWORD':'admin',
+#        'HOST':'localhost',
+#        'PORT':'3306'
+#    }
+#}
 
 
 # Password validation
