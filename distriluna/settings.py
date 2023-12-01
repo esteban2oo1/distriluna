@@ -78,19 +78,17 @@ WSGI_APPLICATION = 'distriluna.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
+
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-}
-#DATABASES = {
-#    'default': {
+    'default': {
 #        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'ferreteria_josa',
-#        'USER':'root',
-#        'PASSWORD':'admin',
-#        'HOST':'localhost',
-#        'PORT':'3306'
-#    }
-#}
+        'NAME': 'h5m5ycugiyaph9bd',
+        'USER':'ru0c3z658bcktsma',
+        'PASSWORD':'c6is44jr43lsrz65',
+        'HOST':'frwahxxknm9kwy6c.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        'PORT':'3306'
+    }
+}
 
 
 # Password validation
