@@ -1,6 +1,9 @@
 {% extends 'bases/card.html' %}
 {% block title %}Registrar Novedad{% endblock %} 
-{% block card_title %}Registrar Novedad{% endblock %} 
+{% block card_title %}Registrar Novedad<div><a href="{% url 'index_tipos_novedades' %}">ver novedades</a></div>
+<b>||</b>
+<div><a href="{% url 'crear_tipo_novedad' %}">crear novedad</a></div>
+{% endblock %} 
 {% block card_content %}
 
 <form method="post" class="form">

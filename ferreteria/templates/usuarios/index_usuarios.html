@@ -1,9 +1,11 @@
 {% extends 'bases/card.html' %}
 {% block title %}Lista de Usuarios{% endblock %} 
-{% block card_title %}Lista de Usuarios{% endblock %} 
+{% block card_title %}lista de usuarios<div style="display: flex; align-items: center;"><a href="{% url 'crear_usuario' %}" style="margin-right: 10px;">agregar Empleado</a></div>{% endblock %}
+
 {% block card_content %}
 
 <table class="table">
+  
   <thead>
     <tr>
       <th>Nombres</th>
@@ -11,7 +13,9 @@
       <th>Email</th>
       <th>Celular</th>
       <th>Fecha de Nacimiento</th>
-      <th>Acciones</th>
+      <th>Estado</th>
+      <th>acciones</th>
+
     </tr>
   </thead>
   <tbody>
@@ -22,13 +26,16 @@
         <td>{{ usuario.email }}</td>
         <td>{{ usuario.celular }}</td>
         <td>{{ usuario.fecha_nacimiento }}</td>
-        
+        <td><i class="fa-solid fa-thumbs-up"></i></td>
+
         <td>
          
 
           <a class="fa-solid fa-pencil"href="{% url 'editar_usuario' pk=usuario.pk %}"></a>
           <b>|</b>
           <a class="fa-solid fa-eraser"href="{% url 'eliminar_usuario' pk=usuario.pk %}"></a>
+          <b>|</b>
+          <button class="fa-solid fa-file"></button>
           
         </td>
       </tr>

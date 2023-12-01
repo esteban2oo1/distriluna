@@ -1,17 +1,27 @@
 {% extends 'bases/card.html' %}
-{% block title %}inicio{% endblock %} 
-{% block card_title %}inicio{% endblock %} 
+{% block title %}Distriluna{% endblock %} 
+{% block card_title %}Distriluna{% endblock %} 
 {% block card_content %}
-  <p>Bienvenido a la aplicación. Aquí puedes realizar diversas acciones:</p>
-  <ul>
-    <li><a href="{% url 'index_usuarios' %}">Ver Usuarios</a></li>
-    <li><a href="{% url 'crear_usuario' %}">Crear Usuario</a></li>
-    <li><a href="{% url 'index_tipos_novedades' %}">Ver Tipos de Novedades</a></li>
-    <li><a href="{% url 'crear_tipo_novedad' %}">Crear Tipo de Novedad</a></li>
-    <li><a href="{% url 'crear_novedad' %}">Crear Novedad</a></li>
+<center><p>Gestión de empleados</p></center>
 
-    <!-- Agrega más enlaces según tus vistas -->
-  </ul>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <a class="fa-solid fa-mug-hot" href="{% url 'crear_novedad' %}"style="font-size: 9.5em;"></a>
+        
+
+      </div>
+      <div class="col">
+        <i class="fa-solid fa-file"style="font-size: 9.5em;"></i>
+      </div>
+      <div class="col">
+        <a class="fa-solid fa-user" href="{% url 'index_usuarios' %}" style="font-size: 9.5em;"></a>
+
+
+        
+      </div>
+    </div>
+  </div>
 {% endblock %}
 {% block content %}
   {% with container_class="container w-50" %}
