@@ -1,0 +1,20 @@
+{% extends 'bases/card.html' %}
+{% block title %}inicio{% endblock %} 
+{% block card_title %}inicio{% endblock %} 
+{% block card_content %}
+  <p>Bienvenido a la aplicación. Aquí puedes realizar diversas acciones:</p>
+  <ul>
+    <li><a href="{% url 'index_usuarios' %}">Ver Usuarios</a></li>
+    <li><a href="{% url 'crear_usuario' %}">Crear Usuario</a></li>
+    <li><a href="{% url 'index_tipos_novedades' %}">Ver Tipos de Novedades</a></li>
+    <li><a href="{% url 'crear_tipo_novedad' %}">Crear Tipo de Novedad</a></li>
+    <li><a href="{% url 'crear_novedad' %}">Crear Novedad</a></li>
+
+    <!-- Agrega más enlaces según tus vistas -->
+  </ul>
+{% endblock %}
+{% block content %}
+  {% with container_class="container w-50" %}
+    {{ block.super }}
+  {% endwith %}
+{% endblock %}

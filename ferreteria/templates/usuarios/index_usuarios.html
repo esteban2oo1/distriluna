@@ -1,0 +1,45 @@
+{% extends 'bases/card.html' %}
+{% block title %}Lista de Usuarios{% endblock %} 
+{% block card_title %}Lista de Usuarios{% endblock %} 
+{% block card_content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Email</th>
+      <th>Celular</th>
+      <th>Fecha de Nacimiento</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for usuario in usuarios %}
+      <tr>
+        <td>{{ usuario.nombres }}</td>
+        <td>{{ usuario.apellidos }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.celular }}</td>
+        <td>{{ usuario.fecha_nacimiento }}</td>
+        
+        <td>
+         
+
+          <a class="fa-solid fa-pencil"href="{% url 'editar_usuario' pk=usuario.pk %}"></a>
+          <b>|</b>
+          <a class="fa-solid fa-eraser"href="{% url 'eliminar_usuario' pk=usuario.pk %}"></a>
+          
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  
+</table>
+
+{% endblock %}
+{% block content %}
+  {% with container_class="container" %}
+    {{ block.super }}
+  {% endwith %}
+{% endblock %}

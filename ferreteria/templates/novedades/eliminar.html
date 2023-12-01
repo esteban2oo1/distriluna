@@ -1,0 +1,16 @@
+{% extends 'bases/card.html' %}
+{% block title %}eliminar novedad{% endblock %} 
+{% block card_title %}eliminar Novedad{% endblock %} 
+{% block card_content %}
+
+<p>¿Estás seguro que deseas eliminar esta novedad?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit"class="fa-solid fa-eraser"></button>
+</form>
+{% endblock %}
+{% block content %}
+  {% with container_class="container w-50" %}
+    {{ block.super }}
+  {% endwith %}
+{% endblock %}

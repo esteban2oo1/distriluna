@@ -1,0 +1,39 @@
+{% extends 'bases/card.html' %}
+{% block title %}Lista de Usuarios Novedades{% endblock %} 
+{% block card_title %}Lista de Usuarios Novedades{% endblock %} 
+{% block card_content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Novedad</th>
+      <th>Total de Días</th>
+      <th>Días Restantes</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for usuario_novedad in usuarios_novedades %}
+      <tr>
+        <td>{{ usuario_novedad.usuario }}</td>
+        <td>{{ usuario_novedad.novedad }}</td>
+        <td>{{ usuario_novedad.total_dias }}</td>
+        <td>{{ usuario_novedad.dias_restantes }}</td>
+        <td>
+          <a class="fa-solid fa-pencil"href="{% url 'editar_usuarios_novedad' pk=usuario_novedad.pk %}"></a>
+          <b>|</b>
+          <a class="fa-solid fa-eraser"href="{% url 'eliminar_usuarios_novedad' pk=usuario_novedad.pk %}"></a>
+          
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
+{% block content %}
+  {% with container_class="container" %}
+    {{ block.super }}
+  {% endwith %}
+{% endblock %}

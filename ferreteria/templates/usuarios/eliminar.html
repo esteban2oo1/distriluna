@@ -1,0 +1,16 @@
+{% extends 'bases/card.html' %}
+{% block title %}Registrar Equipo{% endblock %} 
+{% block card_title %}Registrar Equipo{% endblock %} 
+{% block card_content %}
+<p>¿Estás seguro de que deseas eliminar al usuario: {{ usuarios.nombre }} {{ usuarios.apellido }}?</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Eliminar</button>
+</form>
+<a href="{% url 'index_usuarios' %}" class="btn btn-secondary">Cancelar</a>
+{% endblock %}
+{% block content %}
+  {% with container_class="container w-50" %}
+    {{ block.super }}
+  {% endwith %}
+{% endblock %}

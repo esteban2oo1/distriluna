@@ -1,0 +1,15 @@
+{% extends 'bases/card.html' %}
+{% block title %}tipos-novedades{% endblock %} 
+{% block card_title %}novedades{% endblock %} 
+{% block card_content %}
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirmar Eliminación</button>
+  </form>
+  <a href="{% url 'index_tipos_novedades' %}">Cancelar y volver a la lista de tipos de novedades</a>
+{% endblock %}
+{% block content %}
+  {% with container_class="container w-50" %}
+    {{ block.super }}
+  {% endwith %}
+{% endblock %}

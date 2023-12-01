@@ -1,0 +1,18 @@
+{% extends 'bases/card.html' %}
+{% block title %}Registrar Usuario{% endblock %} 
+{% block card_title %}Registrar Usuario{% endblock %} 
+{% block card_content %}
+
+<form method="post" class="form">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="fa-solid fa-floppy-disk"></button>
+  
+</form>
+
+{% endblock %}
+{% block content %}
+  {% with container_class="container w-50" %}
+    {{ block.super }}
+  {% endwith %}
+{% endblock %}

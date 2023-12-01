@@ -1,0 +1,38 @@
+{% extends 'bases/card.html' %}
+{% block title %}Lista de Novedades{% endblock %} 
+{% block card_title %}Lista de Novedades{% endblock %} 
+{% block card_content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Fecha de Inicio</th>
+      <th>Fecha de Finalización</th>
+      <th>Días Acumulados</th>
+      <th>Tipo de Novedad</th>
+      <th>Descripción</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for novedad in novedades %}
+      <tr>
+        <td>{{ novedad.fecha_inicio }}</td>
+        <td>{{ novedad.fecha_finalizacion }}</td>
+        <td>{{ novedad.dias_acumulados }}</td>
+        <td>{{ novedad.tipoNovedad }}</td>
+        <td>{{ novedad.descripcion }}</td>
+        <td>
+          <a href="{% url 'editar_novedad' pk=novedad.pk %}">Editar</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
+{% block content %}
+  {% with container_class="container" %}
+    {{ block.super }}
+  {% endwith %}
+{% endblock %}

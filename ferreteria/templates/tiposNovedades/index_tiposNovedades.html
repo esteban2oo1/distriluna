@@ -1,0 +1,35 @@
+{% extends 'bases/card.html' %}
+{% block title %}Lista de Tipos de Novedad{% endblock %} 
+{% block card_title %}Lista de Tipos de Novedad{% endblock %} 
+{% block card_content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tipo_novedad in tipos_novedades %}
+      <tr>
+        <td>{{ tipo_novedad.nombre }}</td>
+        <td>
+          <a class="fa-solid fa-pencil"href="{% url 'editar_tipo_novedad' pk=tipo_novedad.pk %}"></a>
+          <b>|</b>
+          <a class="fa-solid fa-eraser"href="{% url 'eliminar_tipo_novedad' pk=tipo_novedad.pk %}"></a>
+          <button>
+            
+          </button>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
+{% block content %}
+  {% with container_class="container" %}
+    {{ block.super }}
+  {% endwith %}
+{% endblock %}

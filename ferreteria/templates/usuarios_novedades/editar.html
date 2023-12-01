@@ -1,0 +1,17 @@
+{% extends 'bases/card.html' %}
+{% block title %}Editar Usuario Novedad{% endblock %} 
+{% block card_title %}Editar Usuario Novedad{% endblock %} 
+{% block card_content %}
+
+<form method="post" class="form">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+{% endblock %}
+{% block content %}
+  {% with container_class="container w-50" %}
+    {{ block.super }}
+  {% endwith %}
+{% endblock %}
