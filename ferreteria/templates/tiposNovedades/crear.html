@@ -6,8 +6,10 @@
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit" class="btn btn-primary">Guardar</button>
+  
 </form>
-
+<div>.</div>
+<a href="{% url 'index_tipos_novedades' %}"class="btn btn-primary">listar</a>
 {% endblock %}
 {% block content %}
   {% with container_class="container w-50" %}

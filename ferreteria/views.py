@@ -59,7 +59,7 @@ def crear_tipo_novedad(request):
         form = TiposNovedadesForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('index_tipos_novedades')
+            return redirect('crear_tipo_novedad')
     else:
         form = TiposNovedadesForm()
     return render(request, 'tiposNovedades/crear.html', {'form': form})

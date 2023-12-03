@@ -23,7 +23,10 @@
         <td>{{ novedad.tipoNovedad }}</td>
         <td>{{ novedad.descripcion }}</td>
         <td>
-          <a href="{% url 'editar_novedad' pk=novedad.pk %}">Editar</a>
+          <a class="fa-solid fa-marker" href="{% url 'editar_novedad' pk=novedad.pk %}"></a>
+          <b>|</b>
+          <a class="fa-solid fa-trash" href="{% url 'eliminar_novedad' pk=novedad.pk %}"></a>
+            
         </td>
       </tr>
     {% endfor %}

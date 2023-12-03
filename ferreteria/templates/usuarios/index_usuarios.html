@@ -14,7 +14,9 @@
       <th>Celular</th>
       <th>Fecha de Nacimiento</th>
       <th>Estado</th>
+      <th>novedades</th>
       <th>acciones</th>
+      
 
     </tr>
   </thead>
@@ -27,6 +29,14 @@
         <td>{{ usuario.celular }}</td>
         <td>{{ usuario.fecha_nacimiento }}</td>
         <td><i class="fa-solid fa-thumbs-up"></i></td>
+        <td>
+          <a class="fa-regular fa-face-frown" href="{% url 'crear_novedad' %}"></a>
+          <b>|</b>
+          <a class="fa-solid fa-file-contract" href="{% url 'index_novedades' %}"></a>
+        
+        </td>
+        
+        
 
         <td>
          
